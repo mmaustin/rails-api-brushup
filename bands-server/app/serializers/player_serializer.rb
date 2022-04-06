@@ -1,4 +1,5 @@
 class PlayerSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :name, :instrument, :band_id
+  belongs_to :band
 end
