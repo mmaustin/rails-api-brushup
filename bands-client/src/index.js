@@ -7,7 +7,7 @@ import App from './App'
 import './index.css'
 
 
- /* createRoot.render(
+ /* ReactDom.render(
     <React.StrictMode>
       <Provider store={store}>
         <App />
