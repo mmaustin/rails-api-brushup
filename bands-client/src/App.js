@@ -1,10 +1,12 @@
 import React from 'react'
 import { BandsList } from './features/bands/BandsList'
 
-export const App = () => {
+const App = () => {
     return(
         <>
             <BandsList />
         </>
     )
 }
+
+export default App
