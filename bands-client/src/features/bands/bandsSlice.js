@@ -1,6 +1,6 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice} from "@reduxjs/toolkit"; //nanoid
 
-const initialState = [{id: nanoid(), band: "Horace Silver Quintet"}]
+const initialState = []
 
 const bandsSlice = createSlice({
     name: 'displayBands',
