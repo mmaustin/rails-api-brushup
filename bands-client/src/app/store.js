@@ -6,3 +6,5 @@ export const store = configureStore({
     displayBands: bandsSlice
   },
 });
+
+export default store
