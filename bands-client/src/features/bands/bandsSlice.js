@@ -20,6 +20,6 @@ const bandsSlice = createSlice({
     }
 })
 
-export const selectAllBands = (state) => state.bands.displayBands
+export const selectAllBands = (state) => state.displayBands.bands
 
 export default bandsSlice.reducer
