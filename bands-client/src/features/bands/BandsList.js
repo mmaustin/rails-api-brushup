@@ -18,7 +18,8 @@ export const BandsList = () => {
     let content
 
     if (bandStatus === 'succeeded'){
-        console.log(bands)
+        content = bands.slice(0, bands.length/2)//this works, but it is a HORRIBLE fix that will surely has tons of unforseen bad side effects
+        console.log(content)
         /*const newBandsList = bands
         content = newBandsList[0].included.map((b,i) => {
             return <p key={i}>{b.attributes.name}</p>
@@ -29,7 +30,7 @@ export const BandsList = () => {
     return(
         <>
             <p>Can we even do this??? I don't think so.</p>
-            <>{content}</>
+            <>Gone Fishin!</>
             <button>Click This!</button>
             
         </>

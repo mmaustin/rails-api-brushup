@@ -7,7 +7,6 @@ export const retrieveBands = createAsyncThunk(
     "bands/retrieve",
     async () => {
       const res = await DataService.getAll();
-      //console.log(res.data)
       return res.data;
     }
 );
