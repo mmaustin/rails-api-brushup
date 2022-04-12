@@ -3,7 +3,8 @@ class BandsController < ApplicationController
 
     def index
         bands = Band.all
-        render json: BandSerializer.new(bands, {include: [:players]})
+        #render json: BandSerializer.new(bands, {include: [:players]})
+        render json: bands.to_json(include: [:players])
     end
 
     def show
