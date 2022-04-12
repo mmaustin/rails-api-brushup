@@ -22,6 +22,9 @@ const bandsSlice = createSlice({
 
     extraReducers(builder) {
       builder
+      .addCase(retrieveBands.pending, (state, action) => {
+        state.status = 'loading'
+      })
         .addCase(retrieveBands.fulfilled, (state, action) => {
           state.status = 'succeeded'
           state.bands = state.bands.concat(action.payload)

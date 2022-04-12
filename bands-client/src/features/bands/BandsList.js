@@ -18,11 +18,11 @@ export const BandsList = () => {
     let content
 
     if (bandStatus === 'succeeded'){
-        
-        const newBandsList = bands
+        console.log(bands)
+        /*const newBandsList = bands
         content = newBandsList[0].included.map((b,i) => {
             return <p key={i}>{b.attributes.name}</p>
-        })
+        })*/
     }
 
 
