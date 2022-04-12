@@ -18,6 +18,14 @@ const bandsSlice = createSlice({
     initialState,
     reducers: {
 
+    },
+
+    extraReducers(builder) {
+      builder
+        .addCase(retrieveBands.fulfilled, (state, action) => {
+          state.status = 'succeeded'
+          state.bands = state.bands.concat(action.payload)
+        })
     }
 })
 
