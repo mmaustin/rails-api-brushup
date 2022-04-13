@@ -18,9 +18,7 @@ export const BandsList = () => {
     let content
 
     if (bandStatus === 'succeeded'){
-        const newBandsList = bands.slice(0, bands.length/2)//this works, but it is a HORRIBLE fix that will surely has tons of unforseen bad side effects
-        //console.log(content)
-        //const newBandsList = bands
+        const newBandsList = bands
         content = newBandsList.map((b,i) => {
             return <p key={i}>{b.name}</p>
         })
