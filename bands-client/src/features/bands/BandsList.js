@@ -20,7 +20,13 @@ export const BandsList = () => {
     if (bandStatus === 'succeeded'){
         const newBandsList = bands
         content = newBandsList.map((b,i) => {
-           return <p key={i}>{b.name}</p>
+            return <article key={i}>
+                <p key={i}>{b.name}</p>
+                 {b.players.map((p,i) => {
+                 return <p key={i}>{p.name}</p>
+                })}
+            </article>    
+           //return <p key={i}>{b.name}</p>
         })
     }
 
