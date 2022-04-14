@@ -12,6 +12,16 @@ class BandsController < ApplicationController
         render json: @band
     end
 
+    def create
+        @band = Band.new(band_params)
+    
+        if @band.save
+          render json: @band, status: :created, location: @band
+        else
+          render json: @band.errors, status: :unprocessable_entity
+        end
+      end
+
     private
 
     def set_band

@@ -25,11 +25,9 @@ export const BandsList = () => {
                  {b.players.map((p,i) => {
                  return <p key={i}>{p.name}</p>
                 })}
-            </article>    
-           //return <p key={i}>{b.name}</p>
+            </article>
         })
     }
-
 
     return(
         <>
