@@ -31,7 +31,7 @@ export const AddBandForm = () => {
         <section>
             <h2>Add a New Band</h2>
             <form>
-            <label htmlFor="postTitle">Post Title:</label>
+            <label htmlFor="bandName">Band Name:</label>
             <input
                 type="text"
                 id="bandName"
@@ -41,7 +41,7 @@ export const AddBandForm = () => {
                 onChange={onNameChanged}
             />
             <button type="button" onClick={onSaveBandClicked} disabled={!canSave}>
-                Save Post
+                Save Band
             </button>
             </form>
         </section>
