@@ -1,32 +1,32 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { createPlayer } from './playersSlice'
 
-import { addNewPost } from './postsSlice'
-
-export const AddPostForm = () => {
-  const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
-  const [userId, setUserId] = useState('')
+export const AddPlayerForm = () => {
+  const [name, setName] = useState('')
+  const [instrument, setInstrument] = useState('')
+  const [bandId, setBandId] = useState('')
   const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
   const dispatch = useDispatch()
-  const users = useSelector((state) => state.users)
+  const bands = useSelector((state) => state.bands)
+    console.log(bands)
 
-  const onTitleChanged = (e) => setTitle(e.target.value)
-  const onContentChanged = (e) => setContent(e.target.value)
-  const onAuthorChanged = (e) => setUserId(e.target.value)
+  const onNameChanged = (e) => setName(e.target.value)
+  const onInstrumentChanged = (e) => setInstrument(e.target.value)
+  const onBandChanged = (e) => setBandId(e.target.value)
 
   const canSave =
-    [title, content, userId].every(Boolean) && addRequestStatus === 'idle'
+    [name, instrument, bandId].every(Boolean) && addRequestStatus === 'idle'
 
-  const onSavePostClicked = async () => {
+  const onSavePlayerClicked = async () => {
     if (canSave) {
       try {
         setAddRequestStatus('pending')
-        await dispatch(addNewPost({ title, content, user: userId })).unwrap()
-        setTitle('')
-        setContent('')
-        setUserId('')
+        await dispatch(createPlayer({ name, instrument, band: bandId })).unwrap()
+        setName('')
+        setInstrument('')
+        setBandId('')
       } catch (err) {
         console.error('Failed to save the post: ', err)
       } finally {
@@ -35,15 +35,16 @@ export const AddPostForm = () => {
     }
   }
 
-  const usersOptions = users.map((user) => (
-    <option key={user.id} value={user.id}>
-      {user.name}
+  const usersOptions = bands.map((band) => (
+    <option key={band.id} value={band.id}>
+      {band.name}
     </option>
   ))
 
   return (
     <section>
-      <h2>Add a New Post</h2>
+        <p>What the What</p>
+      {/*<h2>Add a New Post</h2>
       <form>
         <label htmlFor="postTitle">Post Title:</label>
         <input
@@ -69,7 +70,7 @@ export const AddPostForm = () => {
         <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
           Save Post
         </button>
-      </form>
+  </form>*/}
     </section>
   )
 }
