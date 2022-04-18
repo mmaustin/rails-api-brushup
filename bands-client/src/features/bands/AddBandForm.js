@@ -5,7 +5,7 @@ import { createBand } from './bandsSlice'
 export const AddBandForm = () => {
     const [name, setName] = useState('');
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
-
+    
     const dispatch = useDispatch();
 
     const onNameChanged = (e) => setName(e.target.value)

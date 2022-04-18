@@ -1,15 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { createPlayer } from './playersSlice'
+//import { createPlayer } from './playersSlice'
+import { selectAllBands } from '../bands/bandsSlice'
+import { retrieveBands } from '../bands/bandsSlice'
 
 export const AddPlayerForm = () => {
-  const [name, setName] = useState('')
+
+  const dispatch = useDispatch()
+
+  const bands = useSelector(selectAllBands)
+  const bandStatus = useSelector(state => state.displayBands.status)
+
+  useEffect(() => {
+      if (bandStatus === 'idle'){
+      dispatch(retrieveBands())
+      }
+  }, [bandStatus, dispatch])
+
+  let content
+
+  if (bandStatus === 'succeeded'){
+      const newBandsList = bands
+      content = newBandsList.map((b,i) => {
+          return <article key={i}>
+              <p key={i}>{b.name}</p>
+               {b.players.map((p,i) => {
+               return <p key={i}>{p.name}</p>
+              })}
+          </article>
+      })
+  }
+  console.log(content)
+
+  /*const [name, setName] = useState('')
   const [instrument, setInstrument] = useState('')
   const [bandId, setBandId] = useState('')
   const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
   const dispatch = useDispatch()
-  const bands = useSelector((state) => state.bands)
+  //how do i get band state that isn't empty in this component!?
+  const bands = useSelector(selectAllBands)
     console.log(bands)
 
   const onNameChanged = (e) => setName(e.target.value)
@@ -39,7 +69,7 @@ export const AddPlayerForm = () => {
     <option key={band.id} value={band.id}>
       {band.name}
     </option>
-  ))
+  ))*/
 
   return (
     <section>
