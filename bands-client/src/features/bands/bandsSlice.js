@@ -4,13 +4,13 @@ import DataService from '../../services/service'
 
 const initialState = {bands: [], status: 'idle', error: null,}
 export const retrieveBands = createAsyncThunk(
-    "bands/retrieve",
-    async () => {
-      const res = await DataService.getAll();
-      return res.data;
-    }
+  "bands/retrieve",
+  async () => {
+    const res = await DataService.getAll();
+    return res.data;
+  }
 );
-export const createTutorial = createAsyncThunk(
+export const createBand = createAsyncThunk(
   "bands/create",
   async ({ name }) => {
     const res = await DataService.create({ name });
@@ -30,10 +30,17 @@ const bandsSlice = createSlice({
       .addCase(retrieveBands.pending, (state, action) => {
         state.status = 'loading'
       })
-        .addCase(retrieveBands.fulfilled, (state, action) => {
-          state.status = 'succeeded'
-          state.bands = state.bands.concat(action.payload)
-        })
+      .addCase(retrieveBands.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.bands = state.bands.concat(action.payload)
+      })
+      .addCase(createBand.pending, (state, action) => {
+        state.status = 'loading'
+      })
+      .addCase(createBand.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.bands = state.bands.concat(action.payload)
+      })
     }
 })
 
