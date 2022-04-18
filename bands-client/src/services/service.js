@@ -6,6 +6,6 @@ class DataService {
     }
     create(band) {
         return http.post("/bands", band);
-      }
+    }
 }
 export default new DataService();
