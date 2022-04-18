@@ -28,8 +28,23 @@ export const AddBandForm = () => {
       }
 
     return(
-        <>
-        </>
+        <section>
+            <h2>Add a New Band</h2>
+            <form>
+            <label htmlFor="postTitle">Post Title:</label>
+            <input
+                type="text"
+                id="bandName"
+                name="bandName"
+                placeholder="Add Your Band"
+                value={name}
+                onChange={onNameChanged}
+            />
+            <button type="button" onClick={onSaveBandClicked} disabled={!canSave}>
+                Save Post
+            </button>
+            </form>
+        </section>
     )
 
 }
