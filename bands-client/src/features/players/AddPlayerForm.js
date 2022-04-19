@@ -44,7 +44,7 @@ export const AddPlayerForm = () => {
     if (canSave) {
       try {
         setAddRequestStatus('pending')
-        await dispatch(createPlayer({ name, instrument, band: bandId })).unwrap()
+        await dispatch(createPlayer({ name, instrument, band_id: bandId })).unwrap()
         setName('')
         setInstrument('')
         setBandId('')
@@ -64,38 +64,37 @@ export const AddPlayerForm = () => {
 
   return (
     <section>
-        <p>What the What</p>
+       {/*} <p>What the What</p>
         <select>
         <option value=""></option>
           {content}
-        </select>
-      {/*<h2>Add a New Post</h2>
+  </select>*/}
+      <h2>Add a New Player</h2>
       <form>
-        <label htmlFor="postTitle">Post Title:</label>
+        <label htmlFor="playerName">Player Name:</label>
         <input
           type="text"
-          id="postTitle"
-          name="postTitle"
-          placeholder="What's on your mind?"
-          value={title}
-          onChange={onTitleChanged}
+          id="playerName"
+          name="playerName"
+          value={name}
+          onChange={onNameChanged}
         />
-        <label htmlFor="postAuthor">Author:</label>
-        <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
+        <label htmlFor="band">Band:</label>
+        <select id="band" value={bandId} onChange={onBandChanged}>
           <option value=""></option>
-          {usersOptions}
+          {content}
         </select>
-        <label htmlFor="postContent">Content:</label>
+        <label htmlFor="instrument">Instrument:</label>
         <textarea
-          id="postContent"
-          name="postContent"
+          id="instrument"
+          name="instrument"
           value={content}
-          onChange={onContentChanged}
+          onChange={onInstrumentChanged}
         />
-        <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
+        <button type="button" onClick={onSavePlayerClicked} disabled={!canSave}>
           Save Post
         </button>
-  </form>*/}
+  </form>
     </section>
   )
 }
