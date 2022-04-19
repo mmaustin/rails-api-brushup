@@ -45,6 +45,13 @@ const bandsSlice = createSlice({
         state.status = 'succeeded'
         state.bands = state.bands.concat(action.payload)
       })
+      .addCase(getBand.pending, (state, action) => {
+        state.status = 'loading'
+      })
+      .addCase(getBand.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.bands = state.bands.concat(action.payload)
+      })
     }
 })
 
