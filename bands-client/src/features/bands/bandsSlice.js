@@ -17,6 +17,13 @@ export const createBand = createAsyncThunk(
     return res.data;
   }
 );
+export const getBand = createAsyncThunk(
+  "band/retrieve",
+  async ({id}) => {
+    const res = await DataService.get(id);
+    return res.data;
+  }
+);
 
 const bandsSlice = createSlice({
     name: 'displayBands',
