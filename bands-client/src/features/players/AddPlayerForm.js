@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-//import { createPlayer } from './playersSlice'
+import { createPlayer } from './playersSlice'
 import { selectAllBands } from '../bands/bandsSlice'
 import { retrieveBands } from '../bands/bandsSlice'
 
@@ -22,25 +22,16 @@ export const AddPlayerForm = () => {
   if (bandStatus === 'succeeded'){
       const newBandsList = bands
       content = newBandsList.map((b,i) => {
-          return <article key={i}>
-              <p key={i}>{b.name}</p>
-               {b.players.map((p,i) => {
-               return <p key={i}>{p.name}</p>
-              })}
-          </article>
+          return <option key={b.id} value={b.id}>
+              {b.name}
+          </option>
       })
   }
-  console.log(content)
 
-  /*const [name, setName] = useState('')
+  const [name, setName] = useState('')
   const [instrument, setInstrument] = useState('')
   const [bandId, setBandId] = useState('')
   const [addRequestStatus, setAddRequestStatus] = useState('idle')
-
-  const dispatch = useDispatch()
-  //how do i get band state that isn't empty in this component!?
-  const bands = useSelector(selectAllBands)
-    console.log(bands)
 
   const onNameChanged = (e) => setName(e.target.value)
   const onInstrumentChanged = (e) => setInstrument(e.target.value)
@@ -65,7 +56,7 @@ export const AddPlayerForm = () => {
     }
   }
 
-  const usersOptions = bands.map((band) => (
+  /*const usersOptions = bands.map((band) => (
     <option key={band.id} value={band.id}>
       {band.name}
     </option>
@@ -74,6 +65,10 @@ export const AddPlayerForm = () => {
   return (
     <section>
         <p>What the What</p>
+        <select>
+        <option value=""></option>
+          {content}
+        </select>
       {/*<h2>Add a New Post</h2>
       <form>
         <label htmlFor="postTitle">Post Title:</label>
