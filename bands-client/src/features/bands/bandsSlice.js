@@ -50,7 +50,7 @@ const bandsSlice = createSlice({
       })
       .addCase(getBand.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.bands = state.bands.concat(action.payload)
+        state.bands = action.payload
       })
     }
 })
