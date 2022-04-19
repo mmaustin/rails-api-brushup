@@ -85,10 +85,11 @@ export const AddPlayerForm = () => {
           {content}
         </select>
         <label htmlFor="instrument">Instrument:</label>
-        <textarea
+        <input
+          type="text"
           id="instrument"
           name="instrument"
-          value={content}
+          value={instrument}
           onChange={onInstrumentChanged}
         />
         <button type="button" onClick={onSavePlayerClicked} disabled={!canSave}>

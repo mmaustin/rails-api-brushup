@@ -20,7 +20,7 @@ class BandsController < ApplicationController
         else
           render json: @band.errors, status: :unprocessable_entity
         end
-      end
+    end
 
     private
 
