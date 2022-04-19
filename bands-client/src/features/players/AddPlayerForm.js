@@ -21,7 +21,7 @@ export const AddPlayerForm = () => {
 
   if (bandStatus === 'succeeded'){
       const newBandsList = bands
-      content = newBandsList.map((b,i) => {
+      content = newBandsList.map((b) => {
           return <option key={b.id} value={b.id}>
               {b.name}
           </option>
@@ -32,6 +32,7 @@ export const AddPlayerForm = () => {
   const [instrument, setInstrument] = useState('')
   const [bandId, setBandId] = useState('')
   const [addRequestStatus, setAddRequestStatus] = useState('idle')
+  console.log(bandId)
 
   const onNameChanged = (e) => setName(e.target.value)
   const onInstrumentChanged = (e) => setInstrument(e.target.value)
