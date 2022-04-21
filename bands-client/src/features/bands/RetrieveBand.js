@@ -8,9 +8,9 @@ export const RetrieveBand = () => {
     const [id, setId] = useState('')
 
     const bands = useSelector(selectAllBands)
-    //console.log(bands)
-    //const bandStatus = useSelector(state => state.displayBands.status)
-    
+    console.log(bands)
+    //const bandStatus = useSelector(state => state.displayBands.bands)
+
     const onChangeId = e => {setId(e.target.value);}
     const setToEmpty = () => {
         setId("")
