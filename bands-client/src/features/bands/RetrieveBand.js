@@ -8,7 +8,7 @@ export const RetrieveBand = () => {
     const [id, setId] = useState('')
 
     const bands = useSelector(selectAllBands)
-    
+    //console.log(bands)
     //const bandStatus = useSelector(state => state.displayBands.status)
     
     const onChangeId = e => {setId(e.target.value);}
