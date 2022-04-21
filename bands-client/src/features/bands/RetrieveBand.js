@@ -3,14 +3,14 @@ import { selectAllBands } from './bandsSlice'
 import { getBand } from './bandsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 
-export const RetrieveBand = () => {
+export const RetrieveBand = ({b}) => {
     const dispatch = useDispatch()
     const [id, setId] = useState('')
 
     const bands = useSelector(selectAllBands)
-    console.log(bands)
-    const bandStatus = useSelector(state => state)
-    console.log(bandStatus)
+    //console.log(bands)
+    //const bandStatus = useSelector(state => state.displayBands)
+    console.log(b)
 
     const onChangeId = e => {setId(e.target.value);}
     const setToEmpty = () => {
