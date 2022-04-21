@@ -10,5 +10,8 @@ class DataService {
     get(id) {
         return http.get(`/bands/${id}`);
     }
+    update(id, data) {
+        return http.put(`/players/${id}`, data);
+    }
 }
 export default new DataService();
