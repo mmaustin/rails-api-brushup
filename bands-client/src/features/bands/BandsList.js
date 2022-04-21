@@ -2,7 +2,6 @@ import React, {useEffect} from 'react'
 import { selectAllBands } from './bandsSlice'
 import { retrieveBands } from './bandsSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { RetrieveBand } from './RetrieveBand'
 
 export const BandsList = () => {
     const dispatch = useDispatch()
@@ -35,7 +34,6 @@ export const BandsList = () => {
             <p>Can we even do this??? I don't think so.</p>
             <>{content}</>
             <button>Click This!</button>
-            <RetrieveBand b={bands}/>
         </>
     )
 }
