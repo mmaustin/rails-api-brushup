@@ -8,7 +8,7 @@ export const RetrieveBand = () => {
     const [id, setId] = useState('')
 
     const bands = useSelector(selectAllBands)
-    console.log(bands)
+    
     //const bandStatus = useSelector(state => state.displayBands.status)
     
     const onChangeId = e => {setId(e.target.value);}
@@ -25,6 +25,10 @@ export const RetrieveBand = () => {
         }
     }
 
+    const band = bands.map(band => {
+        return <p key={band.id}>{band.name}</p>
+    })
+
     return(
         <div>
             <p>Get Band</p>
@@ -35,6 +39,9 @@ export const RetrieveBand = () => {
                 vaule={id}
             />
             <button onClick={getSingleBand}>Get Band</button>
+            <div>
+                {band}
+            </div>
         </div>
     )
 }
