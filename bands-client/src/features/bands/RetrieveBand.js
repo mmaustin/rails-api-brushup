@@ -39,9 +39,12 @@ export const RetrieveBand = () => {
                 vaule={id}
             />
             <button onClick={getSingleBand}>Get Band</button>
-            <div>
-                {band}
-            </div>
+            {band.length > 0 &&
+                <div>
+                    <p>What You Know 'Bout This!</p>
+                    {band}
+                </div>
+            }
         </div>
     )
 }
