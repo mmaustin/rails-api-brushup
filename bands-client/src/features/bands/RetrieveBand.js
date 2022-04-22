@@ -13,7 +13,7 @@ export const RetrieveBand = () => {
     //const bandStatus = useSelector(state => state.displayBands)
 
     const bands = useSelector(selectAllBands)
-    const bandStatus = useSelector(state => state.displayBands.status)
+    /*const bandStatus = useSelector(state => state.displayBands.status)
 
     useEffect(() => {
         if (bandStatus === 'idle'){
@@ -33,7 +33,7 @@ export const RetrieveBand = () => {
                 })}
             </article>
         })
-    }
+    }*/
 
     const onChangeId = e => {setId(e.target.value);}
     const setToEmpty = () => {
@@ -65,7 +65,7 @@ export const RetrieveBand = () => {
             <button onClick={getSingleBand}>Get Band</button>
             <div>
                 {band}
-                {content}
+                {/*{content}*/}
             </div>
         </div>
     )
