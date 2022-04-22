@@ -26,7 +26,10 @@ export const RetrieveBand = () => {
     }
 
     const band = bands.map(band => {
-        return <p key={band.id}>{band.name}</p>
+        return  <>
+                    <p key={band.id}>{band.name}</p>
+                    <button>Delete</button>
+                </>
     })
 
     return(
