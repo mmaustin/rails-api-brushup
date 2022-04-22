@@ -26,14 +26,10 @@ export const RetrieveBand = () => {
         }
     }
 
-    const deleteThisBand = () => {
-        dispatch(deleteBand({id}));
-    }
-
     const band = bands.map(band => {
         return  <>
                     <p key={band.id}>{band.name}</p>
-                    <button onClick={deleteThisBand}>Delete</button>
+                    <button onClick={() => dispatch(deleteBand({id: band.id}))}>Delete</button>
                 </>
     })
 
@@ -47,12 +43,14 @@ export const RetrieveBand = () => {
                 vaule={id}
             />
             <button onClick={getSingleBand}>Get Band</button>
-            {band.length > 0 &&
+            
                 <div>
                     <p>What You Know 'Bout This!</p>
                     {band}
+                    
                 </div>
-            }
+
         </div>
     )
 }
+//{band.length > 0 &&
