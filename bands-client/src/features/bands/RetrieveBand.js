@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { selectAllBands } from './bandsSlice'
 import { getBand } from './bandsSlice'
 import { useSelector, useDispatch } from 'react-redux'
+import { deleteBand } from './bandsSlice'
 
 export const RetrieveBand = () => {
     const dispatch = useDispatch()
@@ -25,10 +26,14 @@ export const RetrieveBand = () => {
         }
     }
 
+    const deleteThisBand = () => {
+        dispatch(deleteBand({id}));
+    }
+
     const band = bands.map(band => {
         return  <>
                     <p key={band.id}>{band.name}</p>
-                    <button>Delete</button>
+                    <button onClick={deleteThisBand}>Delete</button>
                 </>
     })
 
