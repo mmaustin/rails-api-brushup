@@ -22,6 +22,10 @@ class BandsController < ApplicationController
         end
     end
 
+    def destroy
+        @band.destroy
+    end   
+
     private
 
     def set_band
