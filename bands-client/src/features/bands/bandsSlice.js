@@ -24,6 +24,13 @@ export const getBand = createAsyncThunk(
     return res.data;
   }
 );
+export const deleteBand = createAsyncThunk(
+  "band/delete",
+  async ({ id }) => {
+    await DataService.delete(id);
+    return { id };
+  }
+);
 
 const bandsSlice = createSlice({
     name: 'displayBands',
