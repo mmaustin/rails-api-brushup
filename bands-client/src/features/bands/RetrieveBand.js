@@ -3,6 +3,7 @@ import { selectAllBands } from './bandsSlice'
 import { getBand } from './bandsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteBand } from './bandsSlice'
+import { updateBand } from './bandsSlice'
 
 export const RetrieveBand = () => {
     const dispatch = useDispatch()
@@ -31,6 +32,10 @@ export const RetrieveBand = () => {
         }
     }
 
+    const updateThisBand = () => {
+        dispatch(updateBand({id: id, data: name}))
+    }
+
     const band = bands.map(band => {
 
         return  <>
@@ -46,8 +51,8 @@ export const RetrieveBand = () => {
                             value={name}
                             onChange={onNameChange}
                         />
-                        <button type="button" onClick={onSaveBandClicked} disabled={!canSave}>
-                            Save Band
+                        <button type="button" onClick={updateThisBand}>
+                            Update Band
                         </button>
                     </form>
                 </>
