@@ -13,5 +13,8 @@ class DataService {
     delete(id) {
         return http.delete(`/bands/${id}`);
     }
+    update(id, data) {
+        return http.put(`/bands/${id}`, data);
+    }
 }
 export default new DataService();
