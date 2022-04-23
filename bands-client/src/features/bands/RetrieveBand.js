@@ -10,6 +10,8 @@ export const RetrieveBand = () => {
 
 
     const bands = useSelector(selectAllBands)
+    const bandToSet = bands;
+    const b = bandToSet.map(ba => ba.name)
 
 
     const onChangeId = e => {setId(e.target.value);}
@@ -27,9 +29,11 @@ export const RetrieveBand = () => {
     }
 
     const band = bands.map(band => {
+
         return  <>
                     <p key={band.id}>{band.name}</p>
                     <button onClick={() => dispatch(deleteBand({id: band.id}))}>Delete</button>
+                    
                 </>
     })
 
