@@ -13,6 +13,8 @@ export const RetrieveBand = () => {
     const bandToSet = bands;
     const b = bandToSet.map(ba => ba.name)
 
+    const [name, setName] = useState(b)
+
 
     const onChangeId = e => {setId(e.target.value);}
     const setToEmpty = () => {
