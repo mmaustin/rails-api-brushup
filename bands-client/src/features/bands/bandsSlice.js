@@ -31,6 +31,13 @@ export const deleteBand = createAsyncThunk(
     return { id };
   }
 );
+export const updateBand = createAsyncThunk(
+  "band/update",
+  async ({ id, data }) => {
+    const res = await DataService.update(id, data);
+    return res.data;
+  }
+);
 
 const bandsSlice = createSlice({
     name: 'displayBands',
