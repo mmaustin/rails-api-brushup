@@ -14,6 +14,7 @@ export const RetrieveBand = () => {
     const b = bandToSet.map(ba => ba.name)
 
     const [name, setName] = useState(b)
+    const onNameChange = e => {setName(e.target.value);}
 
 
     const onChangeId = e => {setId(e.target.value);}
@@ -35,7 +36,20 @@ export const RetrieveBand = () => {
         return  <>
                     <p key={band.id}>{band.name}</p>
                     <button onClick={() => dispatch(deleteBand({id: band.id}))}>Delete</button>
-                    
+                    <form>
+                        <label htmlFor="bandName">Band Name:</label>
+                        <input
+                            type="text"
+                            id="bandName"
+                            name="bandName"
+                            placeholder="Update Your Band"
+                            value={name}
+                            onChange={onNameChange}
+                        />
+                        <button type="button" onClick={onSaveBandClicked} disabled={!canSave}>
+                            Save Band
+                        </button>
+                    </form>
                 </>
     })
 
