@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector} from 'react-redux'
-import { createBand } from './bandsSlice'
+//import { createBand } from './bandsSlice'
 import { retrieveBands } from './bandsSlice'
 import { selectAllBands } from './bandsSlice'
+import { updateBand } from './bandsSlice'
 
 export const UpdateBand = () => {
     const dispatch = useDispatch();
@@ -24,7 +25,7 @@ export const UpdateBand = () => {
     }
     console.log(content)
 
-    const [name, setName] = useState('');
+    const [name, setName] = useState(content.name);
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
     const onNameChanged = (e) => setName(e.target.value)
@@ -32,11 +33,11 @@ export const UpdateBand = () => {
     const canSave =
     [name].every(Boolean) && addRequestStatus === 'idle'
 
-    const onSaveBandClicked = async () => {
+    const onUpdateBandClicked = async () => {
         if (canSave) {
           try {
             setAddRequestStatus('pending')
-            await dispatch(createBand({ name })).unwrap()
+            await dispatch(updateBand({id: content.id, name: name })).unwrap()
             setName('')
           } catch (err) {
             console.error('Failed to save the post: ', err)
@@ -48,18 +49,18 @@ export const UpdateBand = () => {
 
     return(
         <section>
-            <h2>Add a New Band</h2>
+            <h2>Update Band</h2>
             <form>
             <label htmlFor="bandName">Band Name:</label>
             <input
                 type="text"
                 id="bandName"
                 name="bandName"
-                placeholder="Add Your Band"
+                placeholder="Update Your Band"
                 value={name}
                 onChange={onNameChanged}
             />
-            <button type="button" onClick={onSaveBandClicked} disabled={!canSave}>
+            <button type="button" onClick={onUpdateBandClicked} disabled={!canSave}>
                 Save Band
             </button>
             </form>
