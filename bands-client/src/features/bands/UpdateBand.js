@@ -25,8 +25,8 @@ export const UpdateBand = () => {
     }
     console.log(content)
 
-    //const [name, setName] = useState('');
-    const [name, setName] = useState(content.name);
+    const [name, setName] = useState('');
+    //const [name, setName] = useState(content.name);
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
     const onNameChanged = (e) => setName(e.target.value)
@@ -38,7 +38,7 @@ export const UpdateBand = () => {
         if (canSave) {
           try {
             setAddRequestStatus('pending')
-            await dispatch(updateBand({id: content.id, name })).unwrap()
+            await dispatch(updateBand({id: content.id, band: {name: name}})).unwrap()
             setName('')
           } catch (err) {
             console.error('Failed to save the post: ', err)

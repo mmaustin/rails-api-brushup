@@ -14,6 +14,7 @@ export const createBand = createAsyncThunk(
   "bands/create",
   async ({ name }) => {
     const res = await DataService.create({ name });
+    console.log(res)
     return res.data;
   }
 );
@@ -33,8 +34,8 @@ export const deleteBand = createAsyncThunk(
 );
 export const updateBand = createAsyncThunk(
   "band/update",
-  async ({ id, name }) => {
-    const res = await DataService.update(id, name);
+  async ({ id, band }) => {
+    const res = await DataService.update(id, band);
     return res.data;
   }
 );
