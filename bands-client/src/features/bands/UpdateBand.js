@@ -1,12 +1,31 @@
-import React, {useState} from 'react'
-import { useDispatch} from 'react-redux'
+import React, {useState, useEffect} from 'react'
+import { useDispatch, useSelector} from 'react-redux'
 import { createBand } from './bandsSlice'
+import { retrieveBands } from './bandsSlice'
+import { selectAllBands } from './bandsSlice'
 
 export const UpdateBand = () => {
+    const dispatch = useDispatch();
+
+    const bands = useSelector(selectAllBands)
+    const bandStatus = useSelector(state => state.displayBands.status)    
+
+    useEffect(() => {
+        if (bandStatus === 'idle'){
+        dispatch(retrieveBands())
+        }
+    }, [bandStatus, dispatch])
+  
+    let content
+  
+    if (bandStatus === 'succeeded'){
+        const newBandsList = bands
+        content = newBandsList[0]
+    }
+    console.log(content)
+
     const [name, setName] = useState('');
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
-    
-    const dispatch = useDispatch();
 
     const onNameChanged = (e) => setName(e.target.value)
 
