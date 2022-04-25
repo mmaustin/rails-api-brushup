@@ -1,82 +1,50 @@
 import React, {useState} from 'react'
-import { selectAllBands } from './bandsSlice'
-import { getBand } from './bandsSlice'
-import { useSelector, useDispatch } from 'react-redux'
-import { deleteBand } from './bandsSlice'
-import { updateBand } from './bandsSlice'
+import { useDispatch} from 'react-redux'
+import { createBand } from './bandsSlice'
 
-export const RetrieveBand = () => {
-    const dispatch = useDispatch()
-    const [id, setId] = useState('')
+export const UpdateBand = () => {
+    const [name, setName] = useState('');
+    const [addRequestStatus, setAddRequestStatus] = useState('idle')
+    
+    const dispatch = useDispatch();
 
+    const onNameChanged = (e) => setName(e.target.value)
 
-    const bands = useSelector(selectAllBands)
-    //const bandToSet = bands;
-    //const name = bandToSet.map(ba => ba.name)
+    const canSave =
+    [name].every(Boolean) && addRequestStatus === 'idle'
 
-    const [name, setName] = useState('')
-    const onNameChange = e => {setName(e.target.value);}
-    console.log(name)
-    //console.log(b)
-
-
-    const onChangeId = e => {setId(e.target.value);}
-    const setToEmpty = () => {
-        setId("")
-    }
-
-    const getSingleBand = () => {
-        if(!id){
-            window.alert('Please enter an id');
-        } else {
-            dispatch(getBand({id}));
-            setToEmpty()
+    const onSaveBandClicked = async () => {
+        if (canSave) {
+          try {
+            setAddRequestStatus('pending')
+            await dispatch(createBand({ name })).unwrap()
+            setName('')
+          } catch (err) {
+            console.error('Failed to save the post: ', err)
+          } finally {
+            setAddRequestStatus('idle')
+          }
         }
-    }
-
-    //const updateThisBand = () => {
-    //    dispatch(updateBand({id: 1, name: 'Art Blakey'}))
-    //}
-
-    const band = bands.map(band => {
-
-        return  <>
-                    <p key={band.id}>{band.name}</p>
-                    <button onClick={() => dispatch(deleteBand({id: band.id}))}>Delete</button>
-                    <form>
-                        <label htmlFor="bandName">Band Name:</label>
-                        <input
-                            type="text"
-                            id="bandName"
-                            name="bandName"
-                            placeholder="Update Your Band"
-                            value={name}
-                            onChange={onNameChange}
-                        />
-                        <button type="button" onClick={()=>dispatch(updateBand({id: band.id,name: name}))}>
-                            Update Band
-                        </button>
-                    </form>
-                </>
-    })
+      }
 
     return(
-        <div>
-            <p>Get Band</p>
+        <section>
+            <h2>Add a New Band</h2>
+            <form>
+            <label htmlFor="bandName">Band Name:</label>
             <input
-                placeholder='Enter Band Id'
                 type="text"
-                onChange={onChangeId}
-                vaule={id}
+                id="bandName"
+                name="bandName"
+                placeholder="Add Your Band"
+                value={name}
+                onChange={onNameChanged}
             />
-            <button onClick={getSingleBand}>Get Band</button>
-            
-                <div>
-                    <p>What You Know 'Bout This!</p>
-                    {band}
-                    
-                </div>
-
-        </div>
+            <button type="button" onClick={onSaveBandClicked} disabled={!canSave}>
+                Save Band
+            </button>
+            </form>
+        </section>
     )
+
 }
