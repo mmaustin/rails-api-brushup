@@ -9,7 +9,7 @@ export const UpdateBand = () => {
     const dispatch = useDispatch();
 
     const bands = useSelector(selectAllBands)
-    const bandStatus = useSelector(state => state.displayBands.status)    
+   const bandStatus = useSelector(state => state.displayBands.status)    
 
     useEffect(() => {
         if (bandStatus === 'idle'){
@@ -17,7 +17,7 @@ export const UpdateBand = () => {
         }
     }, [bandStatus, dispatch])
   
-    let content
+    let content = bands[0]
   
     if (bandStatus === 'succeeded'){
         const newBandsList = bands
@@ -25,6 +25,7 @@ export const UpdateBand = () => {
     }
     console.log(content)
 
+    //const [name, setName] = useState('');
     const [name, setName] = useState(content.name);
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
@@ -61,7 +62,7 @@ export const UpdateBand = () => {
                 onChange={onNameChanged}
             />
             <button type="button" onClick={onUpdateBandClicked} disabled={!canSave}>
-                Save Band
+                Update Band
             </button>
             </form>
         </section>
