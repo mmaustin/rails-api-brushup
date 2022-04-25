@@ -38,7 +38,7 @@ export const UpdateBand = () => {
         if (canSave) {
           try {
             setAddRequestStatus('pending')
-            await dispatch(updateBand({id: content.id, name: name })).unwrap()
+            await dispatch(updateBand({id: content.id, name })).unwrap()
             setName('')
           } catch (err) {
             console.error('Failed to save the post: ', err)

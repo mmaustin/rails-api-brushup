@@ -24,6 +24,7 @@ class BandsController < ApplicationController
 
     def update
         @band.update(band_params)
+        render json: @band
     end
 
     def destroy
