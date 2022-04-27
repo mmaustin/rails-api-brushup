@@ -53,7 +53,7 @@ export const RetrieveBand = () => {
                             value={name}
                             onChange={onNameChange}
                         />
-                        <button type="button" onClick={()=>dispatch(updateBand({id: band.id,band: {name: name}}))}>
+                        <button type="button" onClick={()=>dispatch(updateBand({id: band.id,band: {name: 'the jazz crusaders'}}))}>
                             Update Band
                         </button>
                     </form>
