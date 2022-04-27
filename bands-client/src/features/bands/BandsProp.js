@@ -1,11 +1,13 @@
-import React from 'react'
+/* import React from 'react'
 
-export const BandsProp = ({band}) => {
 
-    const b = band.map(ba=> <p>{ba.id}</p>)
+
+export const BandsProp = ({bands}) => {
+
+    const arrayOfBands = bands.map(b=> <p>{b.id}</p>)
     return(
         <>
-        {b}
         </>
     )
 }
+*/
