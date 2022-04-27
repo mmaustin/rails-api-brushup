@@ -9,6 +9,7 @@ export const BandsList = () => {
 
     const bands = useSelector(selectAllBands)
     const bandStatus = useSelector(state => state.displayBands.status)
+    const b = bands;
 
     useEffect(() => {
         if (bandStatus === 'idle'){
@@ -35,7 +36,7 @@ export const BandsList = () => {
             <p>Can we even do this??? I don't think so.</p>
             <>{content}</>
             <button>Click This!</button>
-            <BandsProp bands={bands}/>
+            <BandsProp band={b}/>
         </>
     )
 }

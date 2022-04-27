@@ -1,11 +1,11 @@
 import React from 'react'
 
-export const BandsProp = ({bands}) => {
+export const BandsProp = ({band}) => {
 
-    const band = bands[0].name
+    const b = band.map(ba=> <p>{ba.id}</p>)
     return(
         <>
-        {band}
+        {b}
         </>
     )
 }
