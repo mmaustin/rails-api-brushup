@@ -25,8 +25,8 @@ export const UpdateBand = () => {
     }
     console.log(content)
 
-    const [name, setName] = useState('');
-    //const [name, setName] = useState(content.name);
+    //const [name, setName] = useState('');
+    const [name, setName] = useState(content.name);
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
 
     const onNameChanged = (e) => setName(e.target.value)
