@@ -11,7 +11,7 @@ export const BandsList = () => {
     const bands = useSelector(selectAllBands)
     const bandStatus = useSelector(state => state.displayBands.status)
     //bandsContainer = bands;
-    console.log(bands)
+    
 
     useEffect(() => {
         if (bandStatus === 'idle'){
@@ -32,6 +32,8 @@ export const BandsList = () => {
             </article>
         })
     }
+
+    console.log(content.splice(0, content.length/2))
 
     return(
         <>
