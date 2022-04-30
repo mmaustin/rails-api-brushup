@@ -3,13 +3,14 @@ import { selectAllBands } from './bandsSlice'
 import { retrieveBands } from './bandsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 //import { BandsProp } from './BandsProp'
+//import { bandsContainer } from './bandsContainer'
 
 export const BandsList = () => {
     const dispatch = useDispatch()
 
     const bands = useSelector(selectAllBands)
     const bandStatus = useSelector(state => state.displayBands.status)
-    //const b = bands;
+    //bandsContainer = bands;
 
     useEffect(() => {
         if (bandStatus === 'idle'){
