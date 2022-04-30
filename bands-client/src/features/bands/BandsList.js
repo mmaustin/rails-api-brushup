@@ -36,8 +36,6 @@ export const BandsList = () => {
         <>
             <p>Can we even do this??? I don't think so.</p>
             <>{content}</>
-            <button>Click This!</button>
-            {/*<BandsProp bands={b}/>*/}
         </>
     )
 }
