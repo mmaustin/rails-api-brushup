@@ -10,13 +10,13 @@ const App = () => {
     return(
         <Router>
             <Routes>
-                <Route exact path='/'
-                render={()=> (
-                    <React.Fragment>
-                        <AddBandForm/>
-                        <BandsList/>
-                    </React.Fragment>
-                    )}
+                <Route 
+                    exact path='/'
+                    element={<>
+                            <AddBandForm/>
+                            <BandsList/>
+                        </>
+                    }
                  />
                 {/*<Route path='/add-band' element={<AddBandForm/>}/>*/}
                 <Route path='/add-player' element={<AddPlayerForm/>}/>
