@@ -11,6 +11,7 @@ export const BandsList = () => {
     const bands = useSelector(selectAllBands)
     const bandStatus = useSelector(state => state.displayBands.status)
     //bandsContainer = bands;
+    console.log(bands)
 
     useEffect(() => {
         if (bandStatus === 'idle'){
