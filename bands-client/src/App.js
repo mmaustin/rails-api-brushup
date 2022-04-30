@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { BandsList } from './features/bands/BandsList'
 import { AddBandForm } from './features/bands/AddBandForm'
 import { AddPlayerForm } from './features/players/AddPlayerForm'
