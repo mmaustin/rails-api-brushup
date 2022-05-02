@@ -4,6 +4,7 @@ import { retrieveBands } from './bandsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 //import { BandsProp } from './BandsProp'
 //import { bandsContainer } from './bandsContainer'
+import { AddBandForm } from './AddBandForm'
 
 export const BandsList = () => {
     const dispatch = useDispatch()
@@ -37,7 +38,7 @@ export const BandsList = () => {
 
     return(
         <>
-            <p>Can we even do this??? I don't think so.</p>
+            <>{AddBandForm}</>
             <>{content}</>
         </>
     )
