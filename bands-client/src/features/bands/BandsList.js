@@ -23,6 +23,7 @@ export const BandsList = () => {
     let content
 
     if (bandStatus === 'succeeded'){
+        //console.log(bands.slice(0, bands.length/2))
         let newBandsList = bands
         content = newBandsList.map((b,i) => {
             return <article key={i}>
@@ -34,7 +35,7 @@ export const BandsList = () => {
         })
     }
 
-    //content = content.splice(0, content.length/2)
+    //content = content.slice(0, content.length/2)
 
     return(
         <>
