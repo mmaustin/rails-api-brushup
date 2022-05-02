@@ -34,11 +34,11 @@ export const BandsList = () => {
         })
     }
 
-    console.log(content.splice(0, content.length/2))
+    //console.log(content.splice(0, content.length/2))
 
     return(
         <>
-            <>{AddBandForm}</>
+            <AddBandForm/>
             <>{content}</>
         </>
     )
