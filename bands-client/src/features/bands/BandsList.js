@@ -20,26 +20,26 @@ export const BandsList = () => {
         }
     }, [bandStatus, dispatch])
 
-   /* let content
+    let content
 
     if (bandStatus === 'succeeded'){
         let newBandsList = bands
         content = newBandsList.map((b,i) => {
             return <article key={i}>
                 <p key={i}>{b.name}</p>
-                 {b.players.map((p,i) => {
+                 {/*{b.players.map((p,i) => {
                  return <p key={i}>{p.name}</p>
-                })}
+                })}*/}
             </article>
         })
-    }*/
+    }
 
     //console.log(content.splice(0, content.length/2))
 
     return(
         <>
             <AddBandForm/>
-            {/*<>{content}</>*/}
+            <>{content}</>
             <p>I am so confused!!!</p>
         </>
     )
