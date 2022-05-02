@@ -11,7 +11,7 @@ export const BandsList = () => {
 
     const bands = useSelector(selectAllBands)
     const bandStatus = useSelector(state => state.displayBands.status)
-    //bandsContainer = bands;
+    console.log(bands)
     
 
     useEffect(() => {
@@ -20,10 +20,10 @@ export const BandsList = () => {
         }
     }, [bandStatus, dispatch])
 
-    let content
+   /* let content
 
     if (bandStatus === 'succeeded'){
-        const newBandsList = bands
+        let newBandsList = bands
         content = newBandsList.map((b,i) => {
             return <article key={i}>
                 <p key={i}>{b.name}</p>
@@ -32,14 +32,15 @@ export const BandsList = () => {
                 })}
             </article>
         })
-    }
+    }*/
 
     //console.log(content.splice(0, content.length/2))
 
     return(
         <>
             <AddBandForm/>
-            <>{content}</>
+            {/*<>{content}</>*/}
+            <p>I am so confused!!!</p>
         </>
     )
 }
