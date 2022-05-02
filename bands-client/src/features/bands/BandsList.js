@@ -34,13 +34,12 @@ export const BandsList = () => {
         })
     }
 
-    //console.log(content.splice(0, content.length/2))
+    //content = content.splice(0, content.length/2)
 
     return(
         <>
             <AddBandForm/>
             <>{content}</>
-            <p>I am so confused!!!</p>
         </>
     )
 }
