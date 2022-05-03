@@ -57,19 +57,8 @@ export const AddPlayerForm = () => {
     }
   }
 
-  /*const usersOptions = bands.map((band) => (
-    <option key={band.id} value={band.id}>
-      {band.name}
-    </option>
-  ))*/
-
   return (
     <section>
-       {/*} <p>What the What</p>
-        <select>
-        <option value=""></option>
-          {content}
-  </select>*/}
       <h2>Add a New Player</h2>
       <form>
         <label htmlFor="playerName">Player Name:</label>
@@ -94,7 +83,7 @@ export const AddPlayerForm = () => {
           onChange={onInstrumentChanged}
         />
         <button type="button" onClick={onSavePlayerClicked} disabled={!canSave}>
-          Save Post
+          Save Band
         </button>
   </form>
     </section>
