@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { selectAllBands } from './bandsSlice'
+//import { selectAllBands } from './bandsSlice'
 import { getBand } from './bandsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteBand } from './bandsSlice'
@@ -10,7 +10,9 @@ export const RetrieveBand = () => {
     const [id, setId] = useState('')
 
 
-    const bands = useSelector(selectAllBands)
+    //const bands = useSelector(selectAllBands)
+    const bands = useSelector(state => state.displayBands.bands)
+    console.log(bands)
     //const bandToSet = bands;
     //const name = bandToSet.map(ba => ba.name)
 
