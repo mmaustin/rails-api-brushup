@@ -1,18 +1,20 @@
 import React, {useState} from 'react'
-//import { selectAllBands } from './bandsSlice'
+import { selectAllBands } from './bandsSlice'
 import { getBand } from './bandsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteBand } from './bandsSlice'
 import { updateBand } from './bandsSlice'
+import { useParams } from 'react-router-dom'
 
 
 export const RetrieveBand = () => {
-    const dispatch = useDispatch()
-    const [id, setId] = useState('')
+    const params = useParams();
+    const dispatch = useDispatch();
+    const [id, setId] = useState('');
+    console.log(params);
 
-
-    //const bands = useSelector(selectAllBands)
-    const bands = useSelector(state => state.displayBands.bands)
+    const bands = useSelector(selectAllBands)
+    //const bands = useSelector(state => state.display.bands)
     console.log(bands)
     //const bandToSet = bands;
     //const name = bandToSet.map(ba => ba.name)
