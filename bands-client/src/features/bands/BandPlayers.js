@@ -1,11 +1,13 @@
 import React from 'react'
 
 export const BandPlayers = ({players}) => {
-
-    const playerList = players.map((p,i)=>{
-        return <p key={i}>{p.name}</p>
-    })
-
+    let playerList;
+    if (players.length > 0){
+        playerList = players.map((p,i)=>{
+            return <p key={i}>{p.name}</p>
+        })
+    }
+    
     return(
         <>
             {playerList}
