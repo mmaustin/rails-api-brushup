@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 //import { BandsProp } from './BandsProp'
 //import { bandsContainer } from './bandsContainer'
 import { AddBandForm } from './AddBandForm'
+import { BandPlayers } from './BandPlayers'
 
 export const BandsList = () => {
     const dispatch = useDispatch()
