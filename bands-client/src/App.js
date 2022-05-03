@@ -21,7 +21,7 @@ const App = () => {
                     />
                     {/*<Route path='/add-band' element={<AddBandForm/>}/>*/}
                     <Route exact path='/add-player' element={<AddPlayerForm/>}/>
-                    <Route exact path='/get-band' element={<RetrieveBand/>}/>
+                    <Route exact path='/get-band/:bandId' element={<RetrieveBand/>}/>
                     <Route exact path='/update-band' element={<UpdateBand/>}/>
                 
             </Routes>
