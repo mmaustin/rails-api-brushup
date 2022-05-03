@@ -20,9 +20,9 @@ const App = () => {
                         }
                     />
                     {/*<Route path='/add-band' element={<AddBandForm/>}/>*/}
-                    <Route path='/add-player' element={<AddPlayerForm/>}/>
-                    <Route path='/get-band' element={<RetrieveBand/>}/>
-                    <Route path='/update-band' element={<UpdateBand/>}/>
+                    <Route exact path='/add-player' element={<AddPlayerForm/>}/>
+                    <Route exact path='/get-band' element={<RetrieveBand/>}/>
+                    <Route exact path='/update-band' element={<UpdateBand/>}/>
                 
             </Routes>
         </Router>
