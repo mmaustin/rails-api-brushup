@@ -3,8 +3,9 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { BandsList } from './features/bands/BandsList'
 //import { AddBandForm } from './features/bands/AddBandForm'
 import { AddPlayerForm } from './features/players/AddPlayerForm'
-import { RetrieveBand } from './features/bands/RetrieveBand'
+//import { RetrieveBand } from './features/bands/RetrieveBand'
 import { UpdateBand } from './features/bands/UpdateBand'
+import { SingleBandPage } from './features/bands/SingleBandPage'
 
 const App = () => {
     return(
@@ -21,7 +22,7 @@ const App = () => {
                     />
                     {/*<Route path='/add-band' element={<AddBandForm/>}/>*/}
                     <Route exact path='/add-player' element={<AddPlayerForm/>}/>
-                    <Route exact path='/get-band/:bandId' element={<RetrieveBand/>}/>
+                    <Route exact path='/get-band/:bandId' element={<SingleBandPage/>}/>
                     <Route exact path='/update-band' element={<UpdateBand/>}/>
                 
             </Routes>
