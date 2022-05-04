@@ -13,7 +13,7 @@ export const BandsList = () => {
 
     const bands = useSelector(selectAllBands)
     const bandStatus = useSelector(state => state.displayBands.status)
-    console.log(bands)
+    //console.log(bands)
     
 
     useEffect(() => {

@@ -6,14 +6,17 @@ import { selectAllBands } from './bandsSlice';
 
 export const SingleBandPage = () => {
     const params = useParams();
-    const bandId = params.bandId;
+    const bandId = parseInt(params.bandId);
+    console.log(typeof bandId);
     const bands = useSelector(selectAllBands);
+    console.log(bands)
     const band = bands.find(band => band.id === bandId)
     console.log(band)
+    
 
     return(
         <>
-            <p>Something ain't right!</p>
+            <p>{band.name}</p>
         </>
     )
 }
