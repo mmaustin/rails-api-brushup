@@ -1,14 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { useParams, useNavigation } from 'react-router-dom'
+import { useParams } from 'react-router-dom';//, useNavigation
 import { getBandById } from './bandsSlice'
 
 export const SingleBandPage = () => {
-
+    const params = useParams();
+    const band = useSelector(state => getBandById(state, params));
 
     return(
         <>
-            <p>Maybe it's this???</p>
+            <p>{band.name}</p>
         </>
     )
 }
