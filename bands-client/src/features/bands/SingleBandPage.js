@@ -8,7 +8,8 @@ export const SingleBandPage = () => {
     const params = useParams();
     const bandId = params.bandId;
     const bands = useSelector(selectAllBands);
-    console.log(bands)
+    const band = bands.find(band => band.id === bandId)
+    console.log(band)
 
     return(
         <>
