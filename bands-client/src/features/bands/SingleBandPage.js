@@ -5,11 +5,13 @@ import { getBandById } from './bandsSlice'
 
 export const SingleBandPage = () => {
     const params = useParams();
+    //console.log(params.bandId);
     const band = useSelector(state => getBandById(state, params));
+    console.log(band)
 
     return(
         <>
-            <p>{band.name}</p>
+            <p>Something ain't right!</p>
         </>
     )
 }
