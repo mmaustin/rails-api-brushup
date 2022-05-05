@@ -13,10 +13,6 @@ export const SingleBandPage = () => {
     const band = useSelector(state => getBandById(state, bandId))
     console.log(band)
 
-    if(!band){
-        navigate('/');
-    }
-
     return(
         <>
             <p>{band.name}</p>
