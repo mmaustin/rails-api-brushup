@@ -71,7 +71,9 @@ const bandsSlice = createSlice({
 })
 
 export const selectAllBands = (state) => state.displayBands.bands;
-export const getBandById = (state, bandId) => 
-  state.bands.find(band => band.id === bandId)
+
+export const getBandById = (state, bandId) => {
+  state.displayBands.bands.find(band => band.id === bandId)
+}
 
 export default bandsSlice.reducer
