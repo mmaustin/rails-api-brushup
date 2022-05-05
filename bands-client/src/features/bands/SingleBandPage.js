@@ -1,11 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getBandById } from './bandsSlice'
 //import { selectAllBands } from './bandsSlice';
 
 export const SingleBandPage = () => {
-    let navigate = useNavigate();
     const params = useParams();
     const bandId = parseInt(params.bandId);
     console.log(bandId)
@@ -16,6 +15,7 @@ export const SingleBandPage = () => {
     return(
         <>
             <p>{band.name}</p>
+            <Link to={`/update-band/${band.id}`} >Edit Band</Link>
         </>
     )
 }
