@@ -67,6 +67,10 @@ const bandsSlice = createSlice({
         state.status = 'succeeded'
         state.bands = [action.payload]
       })
+      .addCase(updateBand.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.bands = [action.payload]
+      })
     }
 })
 

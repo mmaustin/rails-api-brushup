@@ -32,7 +32,7 @@ export const EditBand = () => {
             setAddRequestStatus('idle')
           }
         }
-        navigate('/');
+        navigate(`/get-band/${band.id}`);
       }
 
     return(
