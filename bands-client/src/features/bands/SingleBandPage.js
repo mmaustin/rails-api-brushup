@@ -1,8 +1,9 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link } from 'react-router-dom';
 import { getBandById } from './bandsSlice'
 //import { selectAllBands } from './bandsSlice';
+import { deleteBand } from './bandsSlice';
 
 export const SingleBandPage = () => {
     const params = useParams();
