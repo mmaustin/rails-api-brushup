@@ -7,10 +7,10 @@ import { getBandById } from './bandsSlice'
 export const SingleBandPage = () => {
     const params = useParams();
     const bandId = parseInt(params.bandId);
-    console.log(bandId)
+    //console.log(bandId)
     //const bands = useSelector(selectAllBands);
     const band = useSelector(state => getBandById(state, bandId))
-    console.log(band)
+    //console.log(band)
 
     return(
         <>
