@@ -80,6 +80,11 @@ const bandsSlice = createSlice({
         //state.bands = [action.payload]
         state.bands = updatedState;
       })
+      .addCase(deleteBand.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        const newState = state.bands.filter(band => band.id !== action.payload.id);
+        state.bands = newState;
+      })
     }
 })
 
