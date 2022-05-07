@@ -68,14 +68,17 @@ const bandsSlice = createSlice({
         state.bands = [action.payload]
       })
       .addCase(updateBand.fulfilled, (state, action) => {
-        const index = state.bands.findIndex(band => band.id === action.payload.id);
-        console.log(index);
-        //state[index] = {
-        //  ...state[index],
-        //  ...action.payload,
         state.status = 'succeeded';
-        console.log(action)
-        state.bands = [action.payload]
+        const updatedState = state.bands.map(band => {
+          if (band.id === action.payload.id){
+            band.name = action.payload.name;
+            return band;
+          } else {
+            return band;
+          }
+        });
+        //state.bands = [action.payload]
+        state.bands = updatedState;
       })
     }
 })
