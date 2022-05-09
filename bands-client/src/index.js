@@ -6,8 +6,10 @@ import store from './app/store'
 import { Provider } from 'react-redux'
 import './index.css'
 //import {retrieveBands} from './features/bands/bandsSlice'
+//import {retrievePlayers}
+import {retrievePlayers} from './features/players/playersSlice'
 
-//store.dispatch(retrieveBands())
+store.dispatch(retrievePlayers());
 
 ReactDOM.render(
     <React.StrictMode>
