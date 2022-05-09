@@ -1,10 +1,8 @@
 import React, {useState} from 'react'
 import { useDispatch} from 'react-redux'
 import { createBand } from './bandsSlice'
-import {useNavigate} from 'react-router-dom'
 
 export const AddBandForm = () => {
-    const navigate = useNavigate;
     const [name, setName] = useState('');
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
     
@@ -27,7 +25,6 @@ export const AddBandForm = () => {
             setAddRequestStatus('idle')
           }
         }
-        navigate('/')
       }
 
     return(

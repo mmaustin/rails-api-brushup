@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { createPlayer } from './playersSlice'
 import { selectAllBands } from '../bands/bandsSlice'
 import { retrieveBands } from '../bands/bandsSlice'
+import {useNavigate} from 'react-router-dom'
 
 export const AddPlayerForm = () => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const bands = useSelector(selectAllBands)
   const bandStatus = useSelector(state => state.displayBands.status)
@@ -55,6 +57,7 @@ export const AddPlayerForm = () => {
         setAddRequestStatus('idle')
       }
     }
+    navigate('/');
   }
 
   return (
