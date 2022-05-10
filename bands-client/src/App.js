@@ -3,8 +3,6 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { BandsList } from './features/bands/BandsList'
 import { AddBandForm } from './features/bands/AddBandForm'
 import { AddPlayerForm } from './features/players/AddPlayerForm'
-//import { RetrieveBand } from './features/bands/RetrieveBand'
-//import { UpdateBand } from './features/bands/UpdateBand'
 import { SingleBandPage } from './features/bands/SingleBandPage'
 import { EditBand } from './features/bands/EditBand'
 
