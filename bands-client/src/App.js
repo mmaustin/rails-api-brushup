@@ -5,8 +5,6 @@ import { AddBandForm } from './features/bands/AddBandForm'
 import { AddPlayerForm } from './features/players/AddPlayerForm'
 import { SingleBandPage } from './features/bands/SingleBandPage'
 import { EditBand } from './features/bands/EditBand'
-//what is going on with this editor today!!!
-//I've never had so many issues with github before!!
 
 const App = () => {
     return(
