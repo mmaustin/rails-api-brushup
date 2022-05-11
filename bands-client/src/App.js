@@ -5,6 +5,7 @@ import { AddBandForm } from './features/bands/AddBandForm'
 import { AddPlayerForm } from './features/players/AddPlayerForm'
 import { SingleBandPage } from './features/bands/SingleBandPage'
 import { EditBand } from './features/bands/EditBand'
+import { CheckingState } from './features/bands/CheckState'
 
 const App = () => {
     return(
@@ -23,7 +24,7 @@ const App = () => {
                     <Route exact path='/add-player' element={<AddPlayerForm/>}/>
                     <Route exact path='/get-band/:bandId' element={<SingleBandPage/>}/>
                     <Route exact path='/update-band/:bandId' element={<EditBand/>}/>
-                
+                    <Route exact path='/checking' element={<CheckingState/>}/>
             </Routes>
         </Router>
     )
