@@ -17,12 +17,12 @@ const App = () => {
                     <Route 
                         exact path='/'
                         element={<>
-                                {/*<AddBandForm/>*/}
+                                <AddBandForm/>
                                 <BandsList/>
                             </>
                         }
                     />
-                    <Route path='/add-band' element={<AddBandForm/>}/>
+                    {/*<Route path='/add-band' element={<AddBandForm/>}/>*/}
                     <Route exact path='/add-player' element={<AddPlayerForm/>}/>
                     <Route exact path='/get-band/:bandId' element={<SingleBandPage/>}/>
                     <Route exact path='/update-band/:bandId' element={<EditBand/>}/>
