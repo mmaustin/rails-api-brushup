@@ -50,3 +50,7 @@ export let AddBandForm = () => {
 }
 
 AddBandForm = React.memo(AddBandForm)
+
+//let and react.memo added to stop rendering of add band form on render of homepage, if it wasn't used
+//redux documentaion: https://redux.js.org/tutorials/essentials/part-6-performance-normalization
+//using profiler, i think it worked??
