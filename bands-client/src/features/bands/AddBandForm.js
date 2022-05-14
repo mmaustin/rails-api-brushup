@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useDispatch} from 'react-redux'
 import { createBand } from './bandsSlice'
 
-export const AddBandForm = () => {
+export let AddBandForm = () => {
     const [name, setName] = useState('');
     const [addRequestStatus, setAddRequestStatus] = useState('idle')
     
@@ -48,3 +48,5 @@ export const AddBandForm = () => {
     )
 
 }
+
+AddBandForm = React.memo(AddBandForm)
