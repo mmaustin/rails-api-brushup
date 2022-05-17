@@ -9,7 +9,7 @@ class AdminsController < ApplicationController
 
     def show
         #band = Band.find(params[:id])
-        render json: @admin.to_json(only: [:id, :username, :emial]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
+        render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
     end
 
     def create
