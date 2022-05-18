@@ -7,8 +7,9 @@ import { Provider } from 'react-redux'
 import './index.css'
 //import {retrieveBands} from './features/bands/bandsSlice'
 //import {retrievePlayers} from './features/players/playersSlice'
+import { retrieveAdmins } from './features/admin/adminSlice';
 
-//store.dispatch(retrievePlayers());
+store.dispatch(retrieveAdmins());
 
 /*
 ReactDOM.render(
