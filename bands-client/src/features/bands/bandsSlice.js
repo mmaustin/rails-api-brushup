@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk} from "@reduxjs/toolkit"; //nanoid
+import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import DataService from '../../services/service'
 
 
