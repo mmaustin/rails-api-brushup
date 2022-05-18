@@ -21,8 +21,8 @@ export const SingleBandPage = () => {
 
     return(
         <>
-            { band ? <p>{band.name}</p> : <p>don't crash!</p>}
-            { band ? <Link to={`/update-band/${band.id}`} >Edit Band</Link> : <p>don't crash!</p>}
+            { band ? <p>{band.name}</p> : <p>Please Use The Navigation Bar To Navigate The App!</p>}
+            { band ? <Link to={`/update-band/${band.id}`} >Edit Band</Link> : <p></p>}
             <button onClick={deleteThisBand}>Delete Band</button>
         </>
     )
