@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { retrieveAdmins } from './adminSlice';
 
-export const CreateAdmin = () => {
+export const Admins = () => {
     const dispatch = useDispatch();
     const adminStatus = useSelector(state => state.admin.status)
 
