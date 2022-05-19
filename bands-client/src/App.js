@@ -15,7 +15,7 @@ const App = () => {
                 <Routes>
                     
                     <Route 
-                        exact path='/'
+                        exact path='/band-list'
                         element={<>
                                 {/*<AddBandForm/>*/}
                                 <BandsList/>

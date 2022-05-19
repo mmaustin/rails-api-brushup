@@ -5,12 +5,12 @@ import App from './App'
 import store from './app/store'
 import { Provider } from 'react-redux'
 import './index.css'
-import {retrieveBands} from './features/bands/bandsSlice'
+//import {retrieveBands} from './features/bands/bandsSlice'
 //import {retrievePlayers} from './features/players/playersSlice'
 import { retrieveAdmins } from './features/admin/adminSlice';
 
 store.dispatch(retrieveAdmins());
-store.dispatch(retrieveBands());
+//store.dispatch(retrieveBands());
 
 /*
 ReactDOM.render(
