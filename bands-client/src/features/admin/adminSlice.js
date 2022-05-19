@@ -34,6 +34,10 @@ const adminSlice = createSlice({
         state.status = 'succeeded'
         state.admins = state.admins.concat(action.payload)
       })
+      .addCase(createAdmin.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.admins.push(action.payload)
+      })
     }
 });
 
