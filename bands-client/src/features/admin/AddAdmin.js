@@ -35,7 +35,39 @@ export const AddAdmin =  () => {
 
     return(
         <section>
-
+            <h2>Add a New Admin</h2>
+            <form>
+            <label htmlFor="adminUsername">Admin Name:</label>
+            <input
+                type="text"
+                id="admin-username"
+                name="adminUsername"
+                placeholder="Admin Username"
+                value={username}
+                onChange={onUsernameChanged}
+            />
+            <label htmlFor="adminEmail">Admin Email:</label>
+            <input
+                type="text"
+                id="admin-email"
+                name="adminEmail"
+                placeholder="Admin Email"
+                value={email}
+                onChange={onEmailChanged}
+            />
+            <label htmlFor="adminPassword">Admin Password:</label>
+            <input
+                type="text"
+                id="admin-password"
+                name="adminPassword"
+                placeholder="Admin Password"
+                value={password}
+                onChange={onPasswordChanged}
+            />
+            <button type="button" onClick={onSaveAdmin} disabled={!canSave}>
+                Save Admin
+            </button>
+            </form>
         </section>
     )
 }
