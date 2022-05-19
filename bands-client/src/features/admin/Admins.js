@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { retrieveAdmins } from './adminSlice';
+import { AddAdmin } from './AddAdmin';
 
 export const Admins = () => {
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const Admins = () => {
 
     return(
         <>
-            <p>HomePage!</p>
+            < AddAdmin />
         </>
     )
 };
