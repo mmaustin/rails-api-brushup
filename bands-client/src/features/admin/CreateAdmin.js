@@ -7,6 +7,7 @@ export const CreateAdmin = () => {
 
     return(
         <>
+            <p>HomePage!</p>
         </>
     )
 };
