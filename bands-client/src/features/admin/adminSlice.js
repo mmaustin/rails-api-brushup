@@ -13,7 +13,7 @@ export const createAdmin = createAsyncThunk(
   "admins/create",
   async ({ admin }) => {
     const res = await DataServiceA.create({ admin });
-    //console.log(res)
+    console.log(res.data)
     return res.data;
   }
 );
