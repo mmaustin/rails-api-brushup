@@ -16,6 +16,13 @@ export const createAdmin = createAsyncThunk(
     return res.data;
   }
 );
+export const getAdmin = createAsyncThunk(
+  "admin/retrieve",
+  async () => {
+    const res = await DataServiceA.get();
+    return res.data;
+  }
+);
 
 const adminSlice = createSlice({
     name: 'admin',
