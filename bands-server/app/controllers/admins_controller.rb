@@ -8,8 +8,11 @@ class AdminsController < ApplicationController
     end
 
     def show
-        #band = Band.find(params[:id])
-        render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
+        if current_user
+            render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
+        else
+            render json: "No current session stored", status: :unauthorized
+        end
     end
 
     def create
