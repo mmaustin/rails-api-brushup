@@ -14,7 +14,7 @@ const App = () => {
         <Router>
             <Navbar/>
                 <Routes>
-                    <Route exact path='/' element={<Admins/>} />
+                    <Route exact path='/admin' element={<Admins/>} />
                     <Route exact path='/band-list' element={<> {/*<AddBandForm/>*/} <BandsList/> </>}/>
                     <Route exact path='/add-band' element={<AddBandForm/>}/>
                     <Route exact path='/add-player' element={<AddPlayerForm/>}/>
