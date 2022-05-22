@@ -8,10 +8,10 @@ class AdminsController < ApplicationController
     end
 
     def show
-        current_user
+        if !current_user
         #render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
-        if @admin
-            render json: @admin.to_json(only: [:id, :username, :email])
+            #render json: @admin.to_json(only: [:id, :username, :email])
+            render "Your account doesn't exist."
             #render json: current_user, status: :ok
         else
             render "No current session stored", status: :unauthorized

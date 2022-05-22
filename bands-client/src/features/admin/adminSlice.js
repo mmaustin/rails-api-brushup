@@ -20,6 +20,7 @@ export const getAdmin = createAsyncThunk(
   "admin/retrieve",
   async () => {
     const res = await DataServiceA.get();
+    console.log('cutes')
     return res.data;
   }
 );
