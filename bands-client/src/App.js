@@ -7,6 +7,7 @@ import { AddPlayerForm } from './features/players/AddPlayerForm'
 import { SingleBandPage } from './features/bands/SingleBandPage'
 import { EditBand } from './features/bands/EditBand'
 import { CheckingState } from './features/bands/CheckState'
+import { AdminSession } from './features/admin/AdminSession'
 import { Navbar } from './app/Navbar'
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Router>
             <Navbar/>
                 <Routes>
+                    <Route exact path='/' element={< AdminSession />} />
                     <Route exact path='/admin' element={<Admins/>} />
                     <Route exact path='/band-list' element={<> {/*<AddBandForm/>*/} <BandsList/> </>}/>
                     <Route exact path='/add-band' element={<AddBandForm/>}/>
