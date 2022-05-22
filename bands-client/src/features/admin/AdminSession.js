@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAdmin } from './adminSlice';
 
 export const AdminSession = () => {
-/*
+
     const dispatch = useDispatch();
     const admin = useSelector(state => state.admin.admins);
     const adminStatus = useSelector(state => state.admin.status);
     const [currentAdmin, setCurrentAdmin] = useState(null);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+    //const [isAuthenticated, setIsAuthenticated] = useState(false);
+    console.log(admin)
     useEffect(() => {
         if(adminStatus === 'idle'){
             dispatch(getAdmin());
@@ -19,10 +19,10 @@ export const AdminSession = () => {
 
     if(adminStatus === 'succeeded'){
         setCurrentAdmin(admin);
-        setIsAuthenticated(true);
+       // setIsAuthenticated(true);
     }
 
-    if (!isAuthenticated) {
+/*    if (!isAuthenticated) {
         return <div></div>;
       }
       console.log(admin)
@@ -30,8 +30,7 @@ export const AdminSession = () => {
 */    
     return(
         <>
-            <p>What in the hell!</p>
-           {/* {currentAdmin ? <p>There was one.</p> : <p>There were none.</p>} */}
+           {currentAdmin ? <p>There was one.</p> : <p>There were none.</p>}
         </>
     )
 }

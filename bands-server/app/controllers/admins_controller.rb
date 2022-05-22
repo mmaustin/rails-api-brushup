@@ -8,7 +8,7 @@ class AdminsController < ApplicationController
     end
 
     def show
-        if !current_user
+        if current_user
         #render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
             #render json: @admin.to_json(only: [:id, :username, :email])
             render "Your account doesn't exist."
