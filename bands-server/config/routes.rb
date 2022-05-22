@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
-  resources :admins
+  get '/me', to: "admins#show"
+  resources :admins, only: [:index, :create, :update, :destroy]
   resources :users
   resources :players
   resources :bands
