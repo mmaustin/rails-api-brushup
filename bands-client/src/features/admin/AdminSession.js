@@ -14,13 +14,14 @@ export const AdminSession = () => {
         if(adminStatus === 'idle'){
             dispatch(getAdmin());
         }
-    }, [adminStatus, dispatch])
+    })
 
 
-    if(adminStatus === 'succeeded'){
+/*    if(adminStatus === 'succeeded'){
         setCurrentAdmin(admin);
        // setIsAuthenticated(true);
     }
+*/
 
 /*    if (!isAuthenticated) {
         return <div></div>;
@@ -30,7 +31,7 @@ export const AdminSession = () => {
 */    
     return(
         <>
-           {currentAdmin ? <p>There was one.</p> : <p>There were none.</p>}
+           {admin === " " ? <p>There were none.</p> : <p>There was one.</p>}
         </>
     )
 }
