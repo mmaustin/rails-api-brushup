@@ -20,7 +20,7 @@ export const AdminSession = () => {
     
     return(
         <>
-            {currentAdmin.length > 0 ? <p>There was one.</p> : <p>There were none.</p>}
+            {currentAdmin ? <p>There was one.</p> : <p>There were none.</p>}
         </>
     )
 }

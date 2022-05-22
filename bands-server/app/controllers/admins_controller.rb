@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 
-    before_action :set_admin, only: [:show, :update, :destroy]
+    before_action :set_admin, only: [:update, :destroy]
 
     def index
         admins = Admin.all
@@ -9,9 +9,10 @@ class AdminsController < ApplicationController
 
     def show
         if current_user
-            render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
+            #render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
+            render json: current_user, status: :ok
         else
-            render json: "No current session stored", status: :unauthorized
+            render "No current session stored", status: :unauthorized
         end
     end
 
