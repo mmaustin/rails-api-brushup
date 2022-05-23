@@ -29,6 +29,6 @@ module BandsServer
     config.middleware.use ActionDispatch::Session::CookieStore
     config.middleware.use config.session_store, config.session_options
 
-    config.action_dispatch.cookies_same_site_protection = :strict
+    #config.action_dispatch.cookies_same_site_protection = :strict
   end
 end

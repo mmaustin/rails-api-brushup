@@ -12,6 +12,7 @@ class AdminsController < ApplicationController
         #render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
             #render json: @current_user.to_json(only: [:id, :username, :email])
             render json: current_user, status: :ok
+            #debugger
             #render json: @admin, status: ok
             #render "Your account doesn't exist."
             #render json: current_user, status: :ok
@@ -27,7 +28,7 @@ class AdminsController < ApplicationController
         if @admin.valid?
             session[:admin_id] = @admin.id
           render json: @admin, status: :ok
-          debugger
+          #debugger
         else
           render json: @admin.errors.full_messages, status: :unprocessable_entity
         end
