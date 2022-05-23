@@ -24,8 +24,10 @@ module BandsServer
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    config.session_store :cookie_store, key: '_authentication_app'
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use config.session_store, config.session_options
 
     config.action_dispatch.cookies_same_site_protection = :strict
   end

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
     def current_user
         #session[:init] = true
         @current_user ||= Admin.find_by(id: session[:admin_id])
-        debugger
+        #debugger
         #@current_user ||= Admin.find_by(id: 6)
     end
 

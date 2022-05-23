@@ -12,6 +12,7 @@ class AdminsController < ApplicationController
         #render json: @admin.to_json(only: [:id, :username, :email]) #, :include => {:players => {only: [:name, :instrument, :band_id]}})
             #render json: @current_user.to_json(only: [:id, :username, :email])
             render json: current_user, status: :ok
+            #render json: @admin, status: ok
             #render "Your account doesn't exist."
             #render json: current_user, status: :ok
         else
