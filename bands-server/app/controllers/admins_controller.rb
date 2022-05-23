@@ -26,6 +26,7 @@ class AdminsController < ApplicationController
         if @admin.valid?
             session[:admin_id] = @admin.id
           render json: @admin, status: :ok
+          debugger
         else
           render json: @admin.errors.full_messages, status: :unprocessable_entity
         end
