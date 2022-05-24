@@ -18,7 +18,9 @@ class AdminsController < ApplicationController
             #render json: current_user, status: :ok
         else
             #render "No current session stored", status: :unauthorized
-            render "Your account doesn't exist."
+            #render "Your account doesn't exist."
+            @admin = Admin.find_by(id: 1)
+            render json: @admin
         end
     end
 
@@ -26,7 +28,8 @@ class AdminsController < ApplicationController
         @admin = Admin.create(admin_params)
     
         if @admin.valid?
-            session[:admin_id] = @admin.id
+            @admin.id = session[:session_id]
+            #session[:admin_id] = @admin.id
           render json: @admin, status: :ok
           #debugger
         else
