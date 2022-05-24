@@ -28,8 +28,7 @@ class AdminsController < ApplicationController
         @admin = Admin.create(admin_params)
     
         if @admin.valid?
-            @admin.id = session[:session_id]
-            #session[:admin_id] = @admin.id
+            session[:admin_id] = @admin.id
           render json: @admin, status: :ok
           #debugger
         else
