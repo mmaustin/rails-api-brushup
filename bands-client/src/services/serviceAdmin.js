@@ -8,7 +8,7 @@ class DataService {
         return http.post("/admins", admin);
     }
     get() {
-        return http.get(`/me`, {withCredentials: true});
+        return http.get(`/me`);
     }
     delete(id) {
         return http.delete(`/admins/${id}`);
