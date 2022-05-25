@@ -7,9 +7,9 @@ export const AdminSession = () => {
     const dispatch = useDispatch();
     const admin = useSelector(state => state.admin.admins);
     const adminStatus = useSelector(state => state.admin.status);
-    const [currentAdmin, setCurrentAdmin] = useState(null);
+    //const [currentAdmin, setCurrentAdmin] = useState(null);
     //const [isAuthenticated, setIsAuthenticated] = useState(false);
-    console.log(admin)
+    //console.log(admin)
     useEffect(() => {
         if(adminStatus === 'idle'){
             dispatch(getAdmin());
@@ -31,7 +31,7 @@ export const AdminSession = () => {
 */    
     return(
         <>
-           {admin === " " ? <p>There were none.</p> : <p>There was one.</p>}
+           {admin ? <p>{admin.username}</p> : <p>There were none.</p>}
         </>
     )
 }
