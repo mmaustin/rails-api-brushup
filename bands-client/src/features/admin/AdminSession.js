@@ -8,7 +8,7 @@ export const AdminSession = () => {
     const admin = useSelector(state => state.admin.admins);
     const adminStatus = useSelector(state => state.admin.status);
     const [currentAdmin, setCurrentAdmin] = useState(null);
-    //const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     //console.log(admin)
     useEffect(() => {
         if(adminStatus === 'idle'){
@@ -16,12 +16,13 @@ export const AdminSession = () => {
         }
         return () => {
             setCurrentAdmin(admin);
+            setIsAuthenticated(true);
         }
     })
     
     //let a;
     //setCurrentAdmin(admin);
-    //console.log(currentAdmin)
+    console.log(isAuthenticated)
 
     if(adminStatus === 'succeeded'){
         //a = admin.id;
@@ -30,16 +31,13 @@ export const AdminSession = () => {
     }
 
 
-/*    if (!isAuthenticated) {
+    if (!isAuthenticated) {
         return <div></div>;
       }
-      console.log(admin)
-      console.log(currentAdmin)
-*/    
+   
     return(
         <>
            {admin ? <p>{admin.username}</p> : <p>There were none.</p>}
-           {currentAdmin.username}
         </>
     )
 }
