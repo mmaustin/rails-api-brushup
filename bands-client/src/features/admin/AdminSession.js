@@ -9,7 +9,12 @@ export const AdminSession = () => {
     const adminStatus = useSelector(state => state.admin.status);
     const [currentAdmin, setCurrentAdmin] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    //console.log(admin)
+   
+    /*
+    this setup appears to render the component five times, with both use states rendering with their original value
+    twice, then an intermediate value, and finally the value set in use effect. no idea if this is proper or error prone
+    */
+
     useEffect(() => {
         if(adminStatus === 'idle'){
             dispatch(getAdmin());      
@@ -19,16 +24,10 @@ export const AdminSession = () => {
             setIsAuthenticated(true);
         }
     })
-    
-    //let a;
-    //setCurrentAdmin(admin);
-    console.log(isAuthenticated)
 
-    if(adminStatus === 'succeeded'){
-        //a = admin.id;
-        //setCurrentAdmin(admin);
-       //setIsAuthenticated(true);
-    }
+    //if(adminStatus === 'succeeded'){
+
+    //}
 
 
     if (!isAuthenticated) {
@@ -37,7 +36,7 @@ export const AdminSession = () => {
    
     return(
         <>
-           {admin ? <p>{admin.username}</p> : <p>There were none.</p>}
+           {admin ? <p>You're logged in</p> : <p>Please sign up.</p>}
         </>
     )
 }
