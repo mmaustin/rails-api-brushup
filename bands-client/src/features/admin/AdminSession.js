@@ -12,17 +12,19 @@ export const AdminSession = () => {
     //console.log(admin)
     useEffect(() => {
         if(adminStatus === 'idle'){
-            dispatch(getAdmin());
+            dispatch(getAdmin());      
+        }
+        return () => {
             setCurrentAdmin(admin);
         }
-    }, [currentAdmin])
-
-    let a;
+    })
+    
+    //let a;
     //setCurrentAdmin(admin);
-
+    //console.log(currentAdmin)
 
     if(adminStatus === 'succeeded'){
-        a = admin.id;
+        //a = admin.id;
         //setCurrentAdmin(admin);
        //setIsAuthenticated(true);
     }
@@ -37,7 +39,7 @@ export const AdminSession = () => {
     return(
         <>
            {admin ? <p>{admin.username}</p> : <p>There were none.</p>}
-           {a}
+           {currentAdmin.username}
         </>
     )
 }
