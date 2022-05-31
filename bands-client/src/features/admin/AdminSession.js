@@ -36,7 +36,7 @@ export const AdminSession = () => {
    
     return(
         <>
-           {admin ? <p>You're logged in</p> : <p>Please sign up.</p>}
+           {currentAdmin ? <p>You're logged in</p> : <p>Please sign up.</p>}
         </>
     )
 }

@@ -29,6 +29,7 @@ class AdminsController < ApplicationController
     
         if @admin.valid?
             session[:admin_id] = @admin.id
+            puts session.keys
           render json: @admin, status: :ok
           #debugger
         else
