@@ -3,8 +3,9 @@ class ApplicationController < ActionController::API
 
     def current_user
         #session[:init] = true
+        puts session[:admin_id]
         @current_user ||= Admin.find_by(id: session[:admin_id])
-        puts session.keys
+        #puts session[:session_id]
         #@current_user ||= Admin.find_by(id: 6)
     end
 
