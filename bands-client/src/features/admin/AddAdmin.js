@@ -17,7 +17,7 @@ export const AddAdmin =  () => {
     const canSave =
     [username].every(Boolean) && [email].every(Boolean) && [password].every(Boolean) && addRequestStatus === 'idle'
 
-    const onSaveAdmin = async () => {
+    const onSaveAdmin = async (event) => {
         if (canSave) {
           try {
             setAddRequestStatus('pending')
