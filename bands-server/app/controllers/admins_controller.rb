@@ -23,7 +23,7 @@ class AdminsController < ApplicationController
     
         if @admin.valid?
             session[:admin_id] = @admin.id
-            puts session[:session_id]
+            puts session[:admin_id]
           render json: @admin, status: :ok
           #debugger
         else
